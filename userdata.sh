@@ -3,7 +3,7 @@ sudo su
 set -e
 
 apt update -y
-apt install -y git docker.io docker-compose
+apt install -y git docker.io docker-compose-plugin
 
 systemctl start docker
 systemctl enable docker
