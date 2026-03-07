@@ -4,7 +4,7 @@ services:
   build: backend
   hostname: backend-host
   ports:
-    - "8000:8000"
+    - "5000:5000"
   networks: 
     - ares-network
 
@@ -12,7 +12,7 @@ services:
   build: frontend
   hostname: frontend-host
   environment:
-    - BACKEND_URL=http://backend-host:8000/api
+    - BACKEND_URL=http://backend-host:5000/api
   ports:
     - "3000:3000"
   depends_on:
