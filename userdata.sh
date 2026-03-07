@@ -4,7 +4,6 @@ set -e
 
 apt update -y
 apt install -y git docker.io docker-compose
-apt install -y git python3 python3-pip nodejs npm
 
 systemctl start docker
 systemctl enable docker
