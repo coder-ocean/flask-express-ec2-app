@@ -1,7 +1,15 @@
 #!/bin/bash
 sudo su
+set -e
+
 apt update -y
+apt install -y git docker.io docker-compose
 apt install -y git python3 python3-pip nodejs npm
+
+systemctl start docker
+systemctl enable docker
+
+usermod -aG docker ubuntu
 
 cd /home/ubuntu
 
@@ -10,16 +18,5 @@ git clone https://github.com/coder-ocean/flask-express-ec2-app.git
 
 cd flask-express-ec2-app
 
-# Start Flask Backend
-cd backend
-
-pip3 install -r requirements.txt
-
-nohup python3 app.py > backend.log 2>&1 &
-
-# Start Express Frontend
-cd ../frontend
-
-npm install
-
-nohup npm start > frontend.log 2>&1 &
+# Run containers
+docker compose up -d
