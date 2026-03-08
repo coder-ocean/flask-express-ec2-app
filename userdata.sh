@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo su
+
 set -e
 
 apt update -y
@@ -8,7 +8,6 @@ apt install -y git docker.io docker-compose
 systemctl start docker
 systemctl enable docker
 
-usermod -aG docker ubuntu
 
 cd /home/ubuntu
 
