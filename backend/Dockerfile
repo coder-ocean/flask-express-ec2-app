@@ -1,11 +1,11 @@
-FROM python
+FROM python:3.10.20-alpine3.22
 
 WORKDIR /app
 
-ADD . /app
+ADD . .
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "python3" ]
 
 CMD [ "app.py" ]
