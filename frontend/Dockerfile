@@ -1,10 +1,12 @@
-FROM node:iron-trixie-slimde
+FROM node:iron-trixie-slim
 
 WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 
 RUN npm install
+
+COPY . .
 
 EXPOSE 3000
 

@@ -1,11 +1,13 @@
-FROM python:3.10.20-alpine3.22
+ROM python:3.10.20-alpine3.22
 
 WORKDIR /app
 
-ADD . .
+COPY requirements.txt .
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "python3" ]
+COPY . .
 
-CMD [ "app.py" ]
+ENTRYPOINT ["python"]
+
+CMD ["app.py"]
