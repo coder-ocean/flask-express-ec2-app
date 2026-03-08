@@ -8,6 +8,7 @@ apt install -y git docker.io docker-compose-plugin
 systemctl start docker
 systemctl enable docker
 
+usermod -aG docker ubuntu
 
 cd /home/ubuntu
 
